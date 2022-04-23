@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\AuthController
+;
+//1.Router設定
+//2.Controller設定
+//3.ViewとBootstrap設定
+//4.バリデーションの設定
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +18,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class,'showLogin'])->name('showLogin');
+Route::post('login', [AuthController::class,'Login'])->name('Login');
